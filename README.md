@@ -1,6 +1,6 @@
 # GoogleVisionTutorials
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/DexterInd/GoogleVisionTutorials/master/Google-Cloud-Vision-on-the-Raspberry-Pi.jpg "Use Google Cloud Vision On the Raspberry Pi")
 
 Google Vision API Tutorial with a Raspberry Pi and Raspberry Pi Camera.  See more about it here:  https://www.dexterindustries.com/howto/use-google-cloud-vision-on-the-raspberry-pi/
 

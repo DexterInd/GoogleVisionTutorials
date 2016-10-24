@@ -1,4 +1,4 @@
-# GoogleVisionTutorials
+# Google Cloud Vision Tutorials On The Raspberry Pi
 
 ![alt text](https://raw.githubusercontent.com/DexterInd/GoogleVisionTutorials/master/Google-Cloud-Vision-on-the-Raspberry-Pi.jpg "Use Google Cloud Vision On the Raspberry Pi")
 

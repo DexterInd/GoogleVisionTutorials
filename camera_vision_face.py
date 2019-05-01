@@ -40,7 +40,7 @@ def main():
     image = vision.types.Image(content=content)
     response = client.face_detection(image=image)
     faces = response.face_annotations
-    print(faces)
+    # print(faces)
 
     # Names of likelihood from google.cloud.vision.enums
     likelihood_name = ('UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE',

@@ -8,13 +8,11 @@ based on an image's content.
 
 """
 
-import argparse
-import base64
 import picamera
-import json
 
-from googleapiclient import discovery
-from oauth2client.client import GoogleCredentials
+from google.cloud import vision
+client = vision.ImageAnnotatorClient()
+
 
 def takephoto():
     camera = picamera.PiCamera()
@@ -24,24 +22,20 @@ def main():
     takephoto() # First take a picture
     """Run a label request on a single image"""
 
-    credentials = GoogleCredentials.get_application_default()
-    service = discovery.build('vision', 'v1', credentials=credentials)
+    with open('image.jpg', 'rb') as image_file:
+        content = image_file.read()
 
-    with open('image.jpg', 'rb') as image:
-        image_content = base64.b64encode(image.read())
-        service_request = service.images().annotate(body={
-            'requests': [{
-                'image': {
-                    'content': image_content.decode('UTF-8')
-                },
-                'features': [{
-                    'type': 'LABEL_DETECTION',
-                    'maxResults': 10
-                }]
-            }]
-        })
-        response = service_request.execute()
-        print json.dumps(response, indent=4, sort_keys=True)	#Print it out and make it somewhat pretty.
+    image = vision.types.Image(content=content)
+
+    response = client.logo_detection(image=image)
+
+
+    response = client.label_detection(image=image)
+    labels = response.label_annotations
+    print('Labels:')
+
+    for label in labels:
+        print(label.description)
 
 if __name__ == '__main__':
 
